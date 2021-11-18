@@ -100,7 +100,9 @@ export default {
       this.$auth.loginWithRedirect();
     },
     logout() {
-      this.$auth.logout();
+      this.$auth.logout({
+        returnTo: window.location.origin
+      });
       this.$router.push({ path: "/" });
     }
   }
