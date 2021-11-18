@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "vuesite-3750b"
+  },
+  "targets": {
+    "vuesite-3750b": {
+      "hosting": {
+        "yotty": [
+          "yottles"
+        ]
+      }
+    }
+  }
+}
