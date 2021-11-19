@@ -4,11 +4,20 @@ import router from "./router";
 import { Auth0Plugin } from "./auth";
 import hljs from "highlight.js/lib/core";
 import "highlight.js/styles/github.css";
+import PrimeVue from 'primevue/config';
+
+import 'primevue/resources/themes/vela-purple/theme.css';
+import 'primevue/resources/primevue.min.css';
+import 'primeicons/primeicons.css';
+import './assets/tailwind.css'
+import './index.css'
 
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faLink, faUser, faPowerOff } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { domain, clientId } from "../auth_config.json";
+
+Vue.use(PrimeVue);
 
 Vue.config.productionTip = false;
 
