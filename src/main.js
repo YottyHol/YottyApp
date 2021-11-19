@@ -19,9 +19,12 @@ import { domain, clientId } from "../auth_config.json";
 
 import Menubar from 'primevue/menubar';
 
+Vue.component('Menubar', Menubar);
+
 Vue.use(PrimeVue);
 Vue.use(VueRouter);
 Vue.config.productionTip = false;
+
 
 
 Vue.use(Auth0Plugin, {
