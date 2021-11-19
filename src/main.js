@@ -2,9 +2,9 @@ import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
 import { Auth0Plugin } from "./auth";
-import hljs from "highlight.js/lib/core";
-import "highlight.js/styles/github.css";
 import PrimeVue from 'primevue/config';
+import VueRouter from 'vue-router'
+
 
 import 'primevue/resources/themes/vela-purple/theme.css';
 import 'primevue/resources/primevue.min.css';
@@ -17,11 +17,12 @@ import { faLink, faUser, faPowerOff } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { domain, clientId } from "../auth_config.json";
 
-Vue.use(PrimeVue);
+import Menubar from 'primevue/menubar';
 
+Vue.use(PrimeVue);
+Vue.use(VueRouter);
 Vue.config.productionTip = false;
 
-Vue.use(hljs.vuePlugin);
 
 Vue.use(Auth0Plugin, {
   domain,
