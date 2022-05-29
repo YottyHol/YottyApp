@@ -15,8 +15,11 @@
     </div>
 
     <div class="row">
-      <highlightjs autodetect :code="JSON.stringify($auth.user, null, 2)" class="rounded w-100" />
+      <highlightjs
+        autodetect
+        :code="JSON.stringify($auth.user, null, 2)"
+        class="rounded w-100"
+      />
     </div>
   </div>
 </template>
-
