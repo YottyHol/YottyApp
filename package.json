@@ -5,7 +5,8 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "prettier-format": "prettier --config .prettierrc 'src/**/*.js' --write"
   },
   "dependencies": {
     "@auth0/auth0-spa-js": "^1.18.0",
@@ -26,38 +27,18 @@
     "vue-router": "^3.5.3"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "^7.5.4",
-    "@vue/cli-plugin-babel": "^3.12.1",
-    "@vue/cli-plugin-eslint": "^3.12.1",
+    "@vue/cli-plugin-eslint": "^5.0.4",
     "@vue/cli-service": "^4.5.13",
     "@vue/eslint-config-prettier": "^3.0.5",
-    "eslint": "^7.2.0",
-    "eslint-plugin-vue": "^8.1.1",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.32.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-vue": "^9.1.0",
     "node-sass": "^4.14.1",
-    "prettier": "2.4.1",
+    "prettier": "^2.6.2",
+    "prettier-eslint": "^15.0.1",
     "sass-loader": "^7.3.1",
     "vue-cli-plugin-tailwind": "~2.2.17",
     "vue-template-compiler": "^2.6.14"
-  },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
-    },
-    "extends": [
-      "plugin:vue/essential",
-      "plugin:prettier/recommended",
-      "eslint:recommended"
-    ],
-    "parserOptions": {
-      "parser": "@babel/eslint-parser",
-      "requireConfigFile": false,
-      "ecmaVersion": "latest",
-      "sourceType": "module",
-      "ecmaFeatures": {
-        "jsx": true
-      }
-    },
-    "rules": {}
   }
 }

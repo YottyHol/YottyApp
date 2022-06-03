@@ -1,12 +1,24 @@
 <template>
   <div class="nav-container mb-3">
-    <menu-bar :model="items" 
-    <template #item="{item}">
-        <router-link :to="item.to" custom v-slot="{href, route, navigate, isActive, isExactActive}">
-            <a :href="href" @click="navigate" :class="{'active-link': isActive, 'active-link-exact': isExactActive}">{{route.fullPath}}</a>
+    <menu-bar :model="items">
+      <template #item="{ item }">
+        <router-link
+          :to="item.to"
+          custom
+          v-slot="{ href, route, navigate, isActive, isExactActive }"
+        >
+          <a
+            :href="href"
+            @click="navigate"
+            :class="{
+              'active-link': isActive,
+              'active-link-exact': isExactActive,
+            }"
+            >{{ route.fullPath }}</a
+          >
         </router-link>
-    </template>
-   </menu-bar>
+      </template>
+    </menu-bar>
     <nav class="navbar navbar-expand-md navbar-light bg-light">
       <div class="container">
         <div class="navbar-brand logo"></div>
@@ -125,63 +137,63 @@
 
 <script>
 export default {
-  name: 'NavBar',
+  name: "NavBar",
   data() {
     return {
       items: [
         {
-          label: 'Login',
-          icon: 'pi pi-fw pi-user',
+          label: "Login",
+          icon: "pi pi-fw pi-user",
         },
         {
-          label: 'Events',
-          icon: 'pi pi-fw pi-calendar',
+          label: "Events",
+          icon: "pi pi-fw pi-calendar",
           items: [
             {
-              label: 'Edit',
-              icon: 'pi pi-fw pi-pencil',
+              label: "Edit",
+              icon: "pi pi-fw pi-pencil",
               items: [
                 {
-                  label: 'Save',
-                  icon: 'pi pi-fw pi-calendar-plus',
+                  label: "Save",
+                  icon: "pi pi-fw pi-calendar-plus",
                 },
                 {
-                  label: 'Delete',
-                  icon: 'pi pi-fw pi-calendar-minus',
+                  label: "Delete",
+                  icon: "pi pi-fw pi-calendar-minus",
                 },
               ],
             },
             {
-              label: 'Archieve',
-              icon: 'pi pi-fw pi-calendar-times',
+              label: "Archieve",
+              icon: "pi pi-fw pi-calendar-times",
               items: [
                 {
-                  label: 'Remove',
-                  icon: 'pi pi-fw pi-calendar-minus',
+                  label: "Remove",
+                  icon: "pi pi-fw pi-calendar-minus",
                 },
               ],
             },
           ],
         },
         {
-          label: 'Quit',
-          icon: 'pi pi-fw pi-power-off',
+          label: "Quit",
+          icon: "pi pi-fw pi-power-off",
         },
       ],
-    }
+    };
   },
   methods: {
     login() {
-      this.$auth.loginWithRedirect()
+      this.$auth.loginWithRedirect();
     },
     logout() {
       this.$auth.logout({
         returnTo: window.location.origin,
-      })
-      this.$router.push({ path: '/' })
+      });
+      this.$router.push({ path: "/" });
     },
   },
-}
+};
 </script>
 
 <style>

@@ -70,6 +70,6 @@
 
 <script>
 export default {
-  name: 'HomeContent',
-}
+  name: "HomeContent",
+};
 </script>
