@@ -1,22 +1,8 @@
 <template>
   <div class="nav-container mb-3">
     <menu-bar :model="items">
-      <template #item="{ item }">
-        <router-link
-          :to="item.to"
-          custom
-          v-slot="{ href, route, navigate, isActive, isExactActive }"
-        >
-          <a
-            :href="href"
-            @click="navigate"
-            :class="{
-              'active-link': isActive,
-              'active-link-exact': isExactActive,
-            }"
-            >{{ route.fullPath }}</a
-          >
-        </router-link>
+      <template #User="{ User }">
+        <a :href="User.url">{{ $auth.user.name }}</a>
       </template>
     </menu-bar>
     <nav class="navbar navbar-expand-md navbar-light bg-light">
@@ -144,10 +130,18 @@ export default {
         {
           label: "Login",
           icon: "pi pi-fw pi-user",
+          command: () => this.login(),
+          visible: () => !this.$auth.isAuthenticated && !this.$auth.loading,
+        },
+        {
+          label: "User",
+          icon: "pi pi-fw pi-user",
+          visible: () => this.$auth.isAuthenticated,
         },
         {
           label: "Events",
           icon: "pi pi-fw pi-calendar",
+          visible: () => this.$auth.isAuthenticated,
           items: [
             {
               label: "Edit",
@@ -176,8 +170,10 @@ export default {
           ],
         },
         {
-          label: "Quit",
+          label: "Logout",
           icon: "pi pi-fw pi-power-off",
+          command: () => this.logout(),
+          visible: () => this.$auth.isAuthenticated,
         },
       ],
     };

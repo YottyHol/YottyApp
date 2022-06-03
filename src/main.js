@@ -2,7 +2,6 @@ import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
 import { Auth0Plugin } from "./auth";
-import PrimeVue from "primevue/config";
 import VueRouter from "vue-router";
 
 import "primevue/resources/themes/vela-purple/theme.css";
@@ -15,12 +14,10 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import { faLink, faUser, faPowerOff } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { domain, clientId } from "../auth_config.json";
+import primeVue from "./primeVue.js";
 
-import Menubar from "primevue/menubar";
+primeVue(Vue);
 
-Vue.component("menu-bar", Menubar);
-
-Vue.use(PrimeVue);
 Vue.use(VueRouter);
 Vue.config.productionTip = false;
 
