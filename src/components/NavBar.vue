@@ -1,8 +1,14 @@
 <template>
   <div class="nav-container mb-3">
     <menu-bar :model="items">
-      <template #User="{ User }">
-        <a :href="User.url">{{ $auth.user.name }}</a>
+      <template #end>
+        <img
+          v-if="$auth.isAuthenticated"
+          :src="$auth.user.picture"
+          alt="User's profile picture"
+          class="nav-user-profile rounded-circle"
+          width="50"
+        />
       </template>
     </menu-bar>
     <nav class="navbar navbar-expand-md navbar-light bg-light">
@@ -47,12 +53,6 @@
                 id="profileDropDown"
                 data-toggle="dropdown"
               >
-                <img
-                  :src="$auth.user.picture"
-                  alt="User's profile picture"
-                  class="nav-user-profile rounded-circle"
-                  width="50"
-                />
               </a>
               <div class="dropdown-menu dropdown-menu-right">
                 <div class="dropdown-header">{{ $auth.user.name }}</div>
@@ -92,6 +92,7 @@
             class="navbar-nav d-md-none d-flex"
             v-if="$auth.isAuthenticated"
           >
+            <li class="nav-item"></li>
             <li class="nav-item">
               <span class="user-info">
                 <img
@@ -126,6 +127,7 @@ export default {
   name: "NavBar",
   data() {
     return {
+      username: "",
       items: [
         {
           label: "Login",
@@ -137,6 +139,13 @@ export default {
           label: "User",
           icon: "pi pi-fw pi-user",
           visible: () => this.$auth.isAuthenticated,
+
+          items: [
+            {
+              label: "Manage",
+              icon: "pi pi-fw pi-user-edit",
+            },
+          ],
         },
         {
           label: "Events",
@@ -158,7 +167,7 @@ export default {
               ],
             },
             {
-              label: "Archieve",
+              label: "Archive",
               icon: "pi pi-fw pi-calendar-times",
               items: [
                 {
@@ -188,6 +197,9 @@ export default {
       });
       this.$router.push({ path: "/" });
     },
+  },
+  mounted() {
+    this.username = this.$auth.user.name;
   },
 };
 </script>
