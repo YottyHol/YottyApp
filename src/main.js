@@ -4,7 +4,7 @@ import router from "./router";
 import { Auth0Plugin } from "./auth";
 import VueRouter from "vue-router";
 
-import "primevue/resources/themes/vela-purple/theme.css";
+import "primevue/resources/themes/vela-green/theme.css";
 import "primevue/resources/primevue.min.css";
 import "primeicons/primeicons.css";
 import "./assets/tailwind.css";
