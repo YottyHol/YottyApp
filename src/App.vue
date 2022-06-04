@@ -1,19 +1,10 @@
 <template>
-  <div id="app" class="d-flex flex-column h-100">
+  <div id="app">
     <nav-bar />
-    <div class="container flex-grow-1">
+    <div class="container">
       <error />
-      <div class="mt-5">
-        <router-view />
-      </div>
+      <router-view />
     </div>
-    <footer class="bg-light text-center p-3">
-      <div class="logo"></div>
-      <p>
-        Sample project provided by
-        <a href="https://auth0.com">Auth0</a>
-      </p>
-    </footer>
   </div>
 </template>
 

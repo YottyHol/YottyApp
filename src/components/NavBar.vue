@@ -45,7 +45,6 @@ export default {
           label: "Home",
           icon: "pi pi-fw pi-home",
           url: "/",
-          visible: () => this.$auth.isAuthenticated,
         },
         {
           label: "Pages",

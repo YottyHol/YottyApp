@@ -1,25 +1,29 @@
 <template>
-  <div class="container">
-    <div class="row align-items-center profile-header">
-      <div class="col-md-2 mb-3">
-        <img
-          :src="$auth.user.picture"
-          alt="User's profile picture"
-          class="rounded-circle img-fluid profile-picture"
-        />
-      </div>
-      <div class="col-md text-center text-md-left">
-        <h2>{{ $auth.user.name }}</h2>
-        <p class="lead text-muted">{{ $auth.user.email }}</p>
-      </div>
-    </div>
-
-    <div class="row">
-      <highlightjs
-        autodetect
-        :code="JSON.stringify($auth.user, null, 2)"
-        class="rounded w-100"
-      />
+  <div>
+    <div class="mx-4">
+      <img :src="$auth.user.picture" alt="User's profile picture" />
+      <card-co>
+        <template #header> </template>
+        <template #title> {{ $auth.user.name }} </template>
+        <template #subtitle> {{ $auth.user.email }} </template>
+        <template #content>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore
+            sed consequuntur error repudiandae numquam deserunt quisquam
+            repellat libero asperiores earum nam nobis, culpa ratione quam
+            perferendis esse, cupiditate neque quas!
+          </p>
+        </template>
+        <template #footer>
+          <Button icon="pi pi-check" label="Save" />
+          <Button
+            icon="pi pi-times"
+            label="Cancel"
+            class="p-button-secondary"
+            style="margin-left: 0.5em"
+          />
+        </template>
+      </card-co>
     </div>
   </div>
 </template>
