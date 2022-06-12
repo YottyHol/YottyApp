@@ -1,5 +1,5 @@
 <template>
-  <div class="nav-container mb-3">
+  <div class="">
     <menu-bar :model="items">
       <template #end>
         <img
@@ -47,12 +47,12 @@ export default {
           url: "/",
         },
         {
-          label: "Pages",
+          label: "About Me",
           icon: "pi pi-fw pi-calendar",
           visible: () => this.$auth.isAuthenticated,
           items: [
             {
-              label: "Edit",
+              label: "CV",
               icon: "pi pi-fw pi-pencil",
               items: [
                 {

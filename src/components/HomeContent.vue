@@ -1,7 +1,20 @@
 <template>
-  <div class="p-d-flex p-flex-column">
-    <div class="p-mb-2">Item 1</div>
-    <div class="p-mb-2">Item 2</div>
+  <div class="flex p-10">
+    <div class="grid grid-cols-2 gap-4 w-full">
+      <a class="bg-metal h-20 text-center" href="/cv">
+        <h1 class="my-auto w-fit">CV</h1>
+      </a>
+
+      <div class="bg-metal h-20">
+        <a href="/cv">CV</a>
+      </div>
+      <div class="bg-metal h-20">
+        <a href="/cv">CV</a>
+      </div>
+      <div class="bg-metal h-20">
+        <a href="/cv">CV</a>
+      </div>
+    </div>
   </div>
 </template>
 
